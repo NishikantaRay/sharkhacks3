@@ -1,1 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+body{
+    background-image: url('src/assets/COVER.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    z-index:9999;
+    background-color:rgba(0, 0, 0, 0.85);
+}

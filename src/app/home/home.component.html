@@ -1,89 +1,87 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">Navbar</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+<nav class="navbar navbar-expand-lg navbar-dark">
+  <div class="container">
+    <a class="navbar-brand" href="#">LOOTMAGNET</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" routerLink="/home">Home</a>
-          
+
         </li>
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" routerLink="/admin">Admin</a>
-          
+
         </li>
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" routerLink="/adlist">list</a>
-          
         </li>
-        
-          
-        
-        
       </ul>
       <div class="d-flex">
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        <button type="button" class="btn  btn-outline-light" data-bs-toggle="modal" data-bs-target="#exampleModal">
           Launch demo modal
         </button>
       </div>
     </div>
   </div>
 </nav>
-<!-- <nav class="navbar navbar-light bg-light">
-    <div class="container-fluid">
-        <a class="navbar-brand">Navbar</a>
-        <div class="d-flex">
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                Launch demo modal
-              </button>
-        </div>
+<br><br><br>
+
+
+<div class="conatiner">
+  <div class="row">
+    <div class="col-md-4 col-12">
     </div>
-</nav> -->
-<section class=" pt-5 mt-5" >
-  <div class="card mx-auto "  style="width:25rem;">
-    <form [formGroup]="profileForm" (ngSubmit)="onSubmit()" >
-      <div class="card-body" style="padding: 25px;">
-        <div class="input-group flex-nowrap">
-            <input  type="text" formControlName="firstName"  class="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping">
-            <button type="submit" class="btn btn-primary">Subscribe</button> 
-             
-        </div>
+    <div class="col-md-4 col-12 mt-5 pt-5" >
+      <div class="card mx-auto " >
+        <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+          <div class="card-body" style="padding: 25px;">
+            <div class="input-group flex-nowrap">
+              <input type="text" formControlName="firstName" class="form-control" placeholder="Username"
+                aria-label="Username" aria-describedby="addon-wrapping">
+              <button type="submit" class="btn btn-outline-light">Subscribe</button>
+            </div>
+          </div>
+        </form>
       </div>
-    </form>
+    </div>
+    <div class="col-md-4 col-12"></div>
   </div>
-</section>
+</div>
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
+  <div class="modal-dialog">
     <div class="modal-content">
-        <div class="modal-header">
+      <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
+      </div>
+      <div class="modal-body">
         <form [formGroup]="regForm" (ngSubmit)="onSubmitForm()">
           <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">Email address</label>
-            <input formControlName="mail" type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+            <input formControlName="mail" type="email" class="form-control" id="exampleFormControlInput1"
+              placeholder="name@example.com">
           </div>
           <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">Ad title</label>
-            <input type="text" formControlName="adTitle" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+            <input type="text" formControlName="adTitle" class="form-control" id="exampleFormControlInput1"
+              placeholder="name@example.com">
           </div>
           <div class="mb-3">
             <label for="exampleFormControlTextarea1" class="form-label">Ad desc</label>
-            <textarea formControlName="adDesc" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            <textarea formControlName="adDesc" class="form-control" id="exampleFormControlTextarea1"
+              rows="3"></textarea>
           </div>
-        
+
           <!-- </div> -->
           <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-outline-light">Submit</button>
           </div>
-      </form>
+        </form>
+      </div>
     </div>
-    </div>
-</div>
-
+  </div>

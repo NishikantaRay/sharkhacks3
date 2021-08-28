@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AdvertiserService } from '../advertiser.service';
 
 @Component({
   selector: 'app-ad-list',
@@ -6,18 +7,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./ad-list.component.css']
 })
 export class AdListComponent implements OnInit {
-  data:any =[{
-    "adtitle":"helloworld",
-    "adDesc":"Some quick example text to build on the card title and make up the bulk of the card's content."
-
-  },{
-    "adtitle":"helloworld",
-    "adDesc":"Some quick example text to build on the card title and make up the bulk of the card's content."
-  }
-];
-  constructor() { }
+  data:any[] =[];
+  constructor(private _adService : AdvertiserService) { }
 
   ngOnInit(): void {
+    this.getVerifiedAds();
+  }
+
+  getVerifiedAds(){
+    this._adService.getVerifiedAds().subscribe(
+      res => {
+        this.data = res.ads;
+        console.log(this.data);
+      },
+      err => console.log(err)
+    )
   }
 
 }

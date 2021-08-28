@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl,Validators,FormBuilder } from '@angular/forms';
+import { AdvertiserService } from '../advertiser.service';
+import { SubscriberService } from '../subscriber.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -7,7 +9,7 @@ import { FormGroup, FormControl,Validators,FormBuilder } from '@angular/forms';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder, private _subscriberService : SubscriberService, private _adService : AdvertiserService) { }
   profileForm = this.fb.group({
     firstName: ['', Validators.required]
   })
@@ -22,9 +24,29 @@ export class HomeComponent implements OnInit {
   
   onSubmitForm() {
     // TODO: Use EventEmitter with form value
-    console.warn(this.regForm.value);
+    // console.warn(this.regForm.value);
+    let ad = {
+      email: this.regForm.value.mail,
+      name: this.regForm.value.adTitle,
+      message: this.regForm.value.adDesc
+    }
+    this._adService.addAd(ad).subscribe( respnse => {
+      console.log(respnse);
+    },err => {
+      console.log(err);
+    });
   }
   onSubmit(){
-    console.warn(this.profileForm.value);
+    // console.warn(this.profileForm.value.firstName);
+    let phone : any = this.profileForm.value.firstName;
+    let subscriber = {
+      phone: phone
+    }
+    this._subscriberService.addSubscriber(subscriber).subscribe( respnse => {
+      console.log(respnse);
+    },err => {
+      console.log(err);
+    });
+
   }
 }

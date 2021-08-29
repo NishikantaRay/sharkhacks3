@@ -16,12 +16,12 @@
 
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" routerLink="/adlist">list</a>
+          <a class="nav-link active" aria-current="page" routerLink="/weekly-deals">Weekly deals 🔥</a>
         </li>
       </ul>
       <div class="d-flex">
-        <button type="button" class="btn  btn-outline-light" data-bs-toggle="modal" data-bs-target="#exampleModal">
-          Launch demo modal
+        <button type="button" class="btn  btn-outline-warning" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          Get your product featured
         </button>
       </div>
     </div>
@@ -39,9 +39,9 @@
         <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
           <div class="card-body" style="padding: 25px;">
             <div class="input-group flex-nowrap">
-              <input type="text" formControlName="firstName" class="form-control" placeholder="Username"
+              <input type="text" formControlName="firstName" class="form-control" placeholder="Phone number"
                 aria-label="Username" aria-describedby="addon-wrapping">
-              <button type="submit" class="btn btn-outline-light">Subscribe</button>
+              <button type="submit" class="btn btn-outline-warning">Subscribe</button>
             </div>
           </div>
         </form>
@@ -55,7 +55,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Tell us about your product</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
@@ -68,18 +68,18 @@
           <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">Ad title</label>
             <input type="text" formControlName="adTitle" class="form-control" id="exampleFormControlInput1"
-              placeholder="name@example.com">
+              placeholder="Ad Title">
           </div>
           <div class="mb-3">
             <label for="exampleFormControlTextarea1" class="form-label">Ad desc</label>
             <textarea formControlName="adDesc" class="form-control" id="exampleFormControlTextarea1"
-              rows="3"></textarea>
+              rows="3" placeholder="Ad Description"></textarea>
           </div>
 
           <!-- </div> -->
           <div class="modal-footer">
             <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Close</button>
-            <button type="submit" class="btn btn-outline-light">Submit</button>
+            <button type="submit" class="btn btn-outline-success">Submit</button>
           </div>
         </form>
       </div>

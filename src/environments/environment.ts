@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  baseUrlSubscriber: 'http://localhost:3000/api/subscriber/',
-  baseUrlAd: 'http://localhost:3000/api/advertiser/',
+  baseUrlSubscriber: 'https://lootmagnet.herokuapp.com/api/subscriber/',
+  baseUrlAd: 'https://lootmagnet.herokuapp.com/api/advertiser/',
 };
 
 /*

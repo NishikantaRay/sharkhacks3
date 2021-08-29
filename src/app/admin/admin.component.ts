@@ -9,6 +9,8 @@ import { AdvertiserService } from '../advertiser.service';
 export class AdminComponent implements OnInit {
   data:any[] =[];
   constructor(private _adService : AdvertiserService) { }
+  public isSent : boolean = false;
+  public isSentMessage !: String;
 
   ngOnInit(): void {
     this.showAd();
@@ -43,6 +45,8 @@ export class AdminComponent implements OnInit {
   onSendMessage(){
     this._adService.sendMessage().subscribe( response => {
       console.log(response);
+      this.isSent = true;
+      this.isSentMessage = response.message;
     },err => {
       console.log(err);
     });

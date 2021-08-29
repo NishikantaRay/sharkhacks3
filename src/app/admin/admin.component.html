@@ -9,6 +9,7 @@
         </div>
     </div>
 </div>
-<div class="mx-auto btn-back mt-2" style="width: 200px;">
-  <button type="button" class="btn btn-outline-success " (click) = onSendMessage()>Send Message</button>
+<div class="mx-auto btn-back mt-2" style="width: 300px;">
+  <button type="button" class="btn btn-outline-success" (click) = onSendMessage()>Send Message</button>
+  <div [class]="isSent?'text-warning':'d-none'" class="mx-4">{{isSentMessage}}</div>
 </div>

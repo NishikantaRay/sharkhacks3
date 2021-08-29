@@ -40,12 +40,14 @@
           <div class="card-body" style="padding: 25px;">
             <div class="input-group flex-nowrap">
               <input type="text" formControlName="firstName" class="form-control" placeholder="Phone number"
-                aria-label="Username" aria-describedby="addon-wrapping">
-              <button type="submit" class="btn btn-outline-warning">Subscribe</button>
+                aria-label="Username" aria-describedby="addon-wrapping" (click) = hideMessages()>
+              <button type="submit" class="btn btn-outline-warning" >Subscribe</button>
             </div>
           </div>
         </form>
+        <div [class]="isSubscribe?'text-warning text-center':'d-none'" class="mx-4">{{isSubscribeMessage}}</div>
       </div>
+      
     </div>
     <div class="col-md-4 col-12"></div>
   </div>
@@ -63,17 +65,17 @@
           <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">Email address</label>
             <input formControlName="mail" type="email" class="form-control" id="exampleFormControlInput1"
-              placeholder="name@example.com">
+              placeholder="name@example.com" (click)= hideMessages()>
           </div>
           <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">Ad title</label>
             <input type="text" formControlName="adTitle" class="form-control" id="exampleFormControlInput1"
-              placeholder="Ad Title">
+              placeholder="Ad Title" (click) = hideMessages()>
           </div>
           <div class="mb-3">
             <label for="exampleFormControlTextarea1" class="form-label">Ad desc</label>
             <textarea formControlName="adDesc" class="form-control" id="exampleFormControlTextarea1"
-              rows="3" placeholder="Ad Description"></textarea>
+              rows="3" placeholder="Ad Description" (click) = hideMessages()></textarea>
           </div>
 
           <!-- </div> -->
@@ -82,6 +84,7 @@
             <button type="submit" class="btn btn-outline-success">Submit</button>
           </div>
         </form>
+        <div [class]="isAd?'text-warning text-center':'d-none'" class="mx-4">{{isAdMessage}}</div>
       </div>
     </div>
   </div>

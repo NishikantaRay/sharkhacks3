@@ -10,7 +10,7 @@ export class AdvertiserService {
   constructor(private _http : HttpClient) { }
 
   addAd(ad : any) {
-    return this._http.post(environment.baseUrlAd+"sendAds",ad);
+    return this._http.post<{message : any}>(environment.baseUrlAd+"sendAds",ad);
   }
 
   getAds(){
@@ -27,7 +27,7 @@ export class AdvertiserService {
 
   sendMessage(){
     console.log("message sending");
-    return this._http.get(environment.baseUrlAd+"sendMessages");
+    return this._http.get<{message : any}>(environment.baseUrlAd+"sendMessages");
   }
 
   getVerifiedAds(){

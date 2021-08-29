@@ -10,6 +10,6 @@ export class SubscriberService {
   constructor(private _http : HttpClient) { }
 
   addSubscriber(phone : any) {
-    return this._http.post(environment.baseUrlSubscriber+"subscribe",phone);
+    return this._http.post<{message : any}>(environment.baseUrlSubscriber+"subscribe",phone);
   }
 }
